@@ -5,33 +5,48 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/DunaGameCurse" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/DunaGameCurse" />
-            <option value="$PROJECT_DIR$/DunaGameCurse/Lesson_2" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame/desktop" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/DunaGameCurse/Lesson_1" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/DunaGameCurse/Lesson_1" />
-            <option value="$PROJECT_DIR$/DunaGameCurse/Lesson_1/core" />
-            <option value="$PROJECT_DIR$/DunaGameCurse/Lesson_1/desktop" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame/desktop" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Lesson_2" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/Lesson_2" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame/desktop" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_4/DuneGame" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_4/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_4/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_4/DuneGame/desktop" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

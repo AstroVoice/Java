@@ -3,6 +3,12 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
       <module name="Java_1" target="11" />
+      <module name="Lesson_1.core" target="1.7" />
+      <module name="Lesson_1.core.main" target="1.7" />
+      <module name="Lesson_1.core.test" target="1.7" />
+      <module name="Lesson_1.desktop" target="1.7" />
+      <module name="Lesson_1.desktop.main" target="1.7" />
+      <module name="Lesson_1.desktop.test" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

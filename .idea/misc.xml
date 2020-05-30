@@ -4,6 +4,10 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/DunaGameCurse" />
     <file type="web" url="file://$PROJECT_DIR$/DunaGameCurse/Lesson_2" />
+    <file type="web" url="file://$PROJECT_DIR$/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
