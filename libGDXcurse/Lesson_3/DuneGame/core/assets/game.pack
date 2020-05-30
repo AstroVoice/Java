@@ -31,9 +31,16 @@ tank
   orig: 64, 64
   offset: 0, 0
   index: -1
-bullet
+Spic
   rotate: false
   xy: 2, 84
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 34, 84
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
