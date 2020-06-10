@@ -9,11 +9,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 public class Tank extends GameObject implements Poolable {
-    public enum Owner {
-        PLAYER, AI
-    }
+//    public enum Owner {
+//        PLAYER, AI
+//    }
 
-    private Owner ownerType;
+    private PlayerType playerType;
     private Weapon weapon;
     private Vector2 destination;
     private TextureRegion[] textures;
@@ -47,8 +47,12 @@ public class Tank extends GameObject implements Poolable {
         }
     }
 
-    public Owner getOwnerType() {
-        return ownerType;
+//    public Owner getOwnerType() {
+//        return ownerType;
+//    }
+
+    public PlayerType getPlayerType() {
+        return playerType;
     }
 
     @Override
@@ -68,10 +72,10 @@ public class Tank extends GameObject implements Poolable {
         this.rotationSpeed = 90.0f;
     }
 
-    public void setup(Owner ownerType, float x, float y) {
+    public void setup(PlayerType playerType, float x, float y) {
         this.textures = Assets.getInstance().getAtlas().findRegion("tankcore").split(64, 64)[0];
         this.position.set(x, y);
-        this.ownerType = ownerType;
+        this.playerType = playerType;
         this.speed = 120.0f;
         this.hpMax = 100;
         this.hp = this.hpMax;
@@ -91,10 +95,16 @@ public class Tank extends GameObject implements Poolable {
         lifeTime += dt;
         // Если у танка есть цель, он пытается ее атаковать
         if (target != null) {
-            destination.set(target.position);
-            if (position.dst(target.position) < 240.0f) {
-                destination.set(position);
-            }
+//            destination.set(target.position);
+//            if (position.dst(target.position) < 240.0f) {
+//                destination.set(position);
+//            }
+            if (target.isActive()) {
+                destination.set(target.position);
+                if (position.dst(target.position) < 240.0f) {
+                    destination.set(position);
+                }
+            } else target = null;
         }
         // Если танку необходимо доехать до какой-то точки, он работает в этом условии
         if (position.dst(destination) > 3.0f) {
@@ -113,6 +123,7 @@ public class Tank extends GameObject implements Poolable {
 
     public void commandMoveTo(Vector2 point) {
         destination.set(point);
+        target = null;
     }
 
     public void commandAttack(Tank target) {
@@ -123,9 +134,15 @@ public class Tank extends GameObject implements Poolable {
         if (weapon.getType() == Weapon.Type.GROUND && target != null) {
             float angleTo = tmp.set(target.position).sub(position).angle();
             weapon.setAngle(rotateTo(weapon.getAngle(), angleTo, 180.0f, dt));
-            int power = weapon.use(dt);
-            if (power > -1) {
-                gc.getProjectilesController().setup(position, weapon.getAngle());
+//            int power = weapon.use(dt);
+//            if (power > -1) {
+//                gc.getProjectilesController().setup(position, weapon.getAngle());
+//            }
+            if (destination.dst(position) < 400) { // Если танк подъехал к цели ближе 400 px - начинаем атаковать
+                int power = weapon.use(dt);
+                if (power > -1) {
+                    gc.getProjectilesController().setup(position, weapon.getAngle(), power, playerType);
+                }
             }
         }
         if (weapon.getType() == Weapon.Type.HARVEST) {
@@ -156,9 +173,13 @@ public class Tank extends GameObject implements Poolable {
     }
 
     public void render(SpriteBatch batch) {
-        if (gc.isTankSelected(this)) {
+        float hpIndicator = ((float) hp) / hpMax;
+        if (gc.isTankSelected(this) && playerType != PlayerType.AI) {
             float c = 0.7f + (float) Math.sin(lifeTime * 8.0f) * 0.3f;
-            batch.setColor(c, c, c, 1.0f);
+            //batch.setColor(c, c, c, 1.0f);
+            batch.setColor(c, c * hpIndicator, c * hpIndicator, 1.0f);
+        } else {
+            batch.setColor(1, hpIndicator, hpIndicator, 1.0f);
         }
         batch.draw(textures[getCurrentFrameIndex()], position.x - 40, position.y - 40, 40, 40, 80, 80, 1, 1, angle);
         batch.draw(weaponsTextures[weapon.getType().getImageIndex()], position.x - 40, position.y - 40, 40, 40, 80, 80, 1, 1, weapon.getAngle());
