@@ -63,6 +63,30 @@
         </option>
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_8/DuneGame" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_8/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_8/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_8/DuneGame/desktop" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/libGDXcurse/Lesson_9/DuneGame" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_9/DuneGame" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_9/DuneGame/core" />
+            <option value="$PROJECT_DIR$/libGDXcurse/Lesson_9/DuneGame/desktop" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
     </option>
   </component>
 </project>

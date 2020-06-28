@@ -8,11 +8,15 @@
     <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_1/DuneGame" />
     <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_2/DuneGame" />
     <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_3/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_4/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_5/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_8/DuneGame" />
+    <file type="web" url="file://$PROJECT_DIR$/libGDXcurse/Lesson_9/DuneGame" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
