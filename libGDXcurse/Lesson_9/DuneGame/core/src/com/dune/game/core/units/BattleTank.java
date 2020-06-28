@@ -8,6 +8,7 @@ import com.dune.game.core.GameController;
 import com.dune.game.core.interfaces.Targetable;
 import com.dune.game.core.Weapon;
 import com.dune.game.core.users_logic.BaseLogic;
+import com.dune.game.core.Building;
 
 public class BattleTank extends AbstractUnit {
     public BattleTank(GameController gc) {
@@ -51,6 +52,18 @@ public class BattleTank extends AbstractUnit {
         }
         if (target == null) {
             weapon.setAngle(rotateTo(weapon.getAngle(), angle, 180.0f, dt));
+        }
+        if (container == 0) {
+            for (int j = 0; j < gc.getBuildingsController().activeSize(); j++) {
+                Building b= gc.getBuildingsController().getActiveList().get(j);
+                if (b != null && b.getBuildingType() == Building.Type.STOCK && b.getOwnerLogic() == this.baseLogic) {
+                    this.commandMoveTo(b.getEntrancePosition(), false);
+                    b = gc.getMap().getBuildingEntrance(getCellX(), getCellY());
+                    if (b != null && b.getBuildingType() == Building.Type.STOCK && b.getOwnerLogic() == this.baseLogic) {
+                        container = 32;
+                    }
+                }
+            }
         }
     }
 
