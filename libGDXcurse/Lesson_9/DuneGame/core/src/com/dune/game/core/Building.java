@@ -22,9 +22,20 @@ public class Building extends GameObject implements Poolable, Targetable {
     private TextureRegion texture;
     private TextureRegion progressbarTexture;
     private Vector2 textureWorldPosition;
+    private Vector2 entrancePosition; // координаты входа в строение
     private int hpMax;
     private int hp;
     private int cellX, cellY;
+
+    @Override
+    public int getCellX() {
+        return cellX;
+    }
+
+    @Override
+    public int getCellY() {
+        return cellY;
+    }
 
     @Override
     public boolean isActive() {
@@ -49,9 +60,19 @@ public class Building extends GameObject implements Poolable, Targetable {
         this.texture = Assets.getInstance().getAtlas().findRegion("grass");
         this.progressbarTexture = Assets.getInstance().getAtlas().findRegion("progressbar");
         this.textureWorldPosition = new Vector2();
+        this.textureWorldPosition = new Vector2(); // координаты нижнего угла здания
+        this.entrancePosition = new Vector2();
+    }
+
+    public Vector2 getEntrancePosition() {
+        return entrancePosition;
     }
 
     public void setup(BaseLogic ownerLogic, int cellX, int cellY) {
+        this.ownerLogic = ownerLogic;
+        this.position.set(cellX * BattleMap.CELL_SIZE + BattleMap.CELL_SIZE / 2, cellY * BattleMap.CELL_SIZE + BattleMap.CELL_SIZE / 2);
+        this.cellX = cellX;
+        this.cellY = cellY;
         this.ownerLogic = ownerLogic;
         this.position.set(cellX * BattleMap.CELL_SIZE + BattleMap.CELL_SIZE / 2, cellY * BattleMap.CELL_SIZE + BattleMap.CELL_SIZE / 2);
         this.cellX = cellX;
@@ -61,6 +82,7 @@ public class Building extends GameObject implements Poolable, Targetable {
         this.textureWorldPosition.set((cellX - 1) * BattleMap.CELL_SIZE, cellY * BattleMap.CELL_SIZE);
         this.buildingType = Type.STOCK;
         gc.getMap().setupBuilding(cellX - 1, cellY, cellX + 1, cellY + 1, cellX, cellY - 1, this);
+        this.entrancePosition.set(((float)cellX + 0.5f) * BattleMap.CELL_SIZE, ((float) cellY - 0.5f) * BattleMap.CELL_SIZE);
     }
 
     public void render(SpriteBatch batch) {

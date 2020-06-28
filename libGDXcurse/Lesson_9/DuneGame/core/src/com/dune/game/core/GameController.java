@@ -56,6 +56,10 @@ public class GameController {
 //    private Music music;
 //    private Sound sound;
 
+    public BuildingsController getBuildingsController() {
+        return buildingsController;
+    }
+
     public GameController() {
         this.mouse = new Vector2();
         this.tmp = new Vector2();
@@ -210,11 +214,11 @@ public class GameController {
             }
         });
 
-        final TextButton testBtn = new TextButton("Test", textButtonStyle);
+        final TextButton testBtn = new TextButton("Pause", textButtonStyle);
         testBtn.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                System.out.println("Test");
+                paused = !paused;
                 ;
             }
         });

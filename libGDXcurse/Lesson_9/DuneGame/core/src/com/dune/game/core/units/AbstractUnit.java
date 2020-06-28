@@ -109,6 +109,10 @@ public abstract class AbstractUnit extends GameObject implements Poolable, Targe
     private int getCurrentFrameIndex() {
         return (int) (moveTimer / timePerFrame) % textures.length;
     }
+    public Vector2 getDestination() {
+        return destination;
+    }
+
 
     public void update(float dt) {
         lifeTime += dt;
