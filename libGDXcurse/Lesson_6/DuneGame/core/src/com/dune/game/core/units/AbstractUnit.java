@@ -30,10 +30,19 @@ public abstract class AbstractUnit extends GameObject implements Poolable, Targe
     protected Targetable target;
     protected float minDstToActiveTarget;
 
+    public Targetable getTarget() {
+        return target;
+    }
+
+    public void setTarget(Targetable target) {
+        this.target = target;
+    }
+
     @Override
     public TargetType getType() {
         return TargetType.UNIT;
     }
+
 
     public boolean takeDamage(int damage) {
         if (!isActive()) {
@@ -180,4 +189,5 @@ public abstract class AbstractUnit extends GameObject implements Poolable, Targe
         }
         return srcAngle;
     }
+
 }
